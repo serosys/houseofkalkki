@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>House of Kalkki — Sip. Savor. Smile.</title>
+<meta name="description" content="House of Kalkki — a coffee house in Ahmedabad. Sip, savor, smile. Two locations in Navrangpura and Mumatpura.">
+
+<!-- Open Graph -->
+<meta property="og:title" content="House of Kalkki">
+<meta property="og:description" content="Sip. Savor. Smile. A coffee house in Ahmedabad.">
+<meta property="og:image" content="assets/logo.png">
+<meta property="og:type" content="website">
+
+<link rel="icon" href="assets/logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Expanded:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --orange: #C1541C;
+    --orange-deep: #9C4014;
+    --cream: #FBF6EF;
+    --card: #F1E7D8;
+    --ink: #241A12;
+    --brown: #8A5A44;
+    --line: rgba(36,26,18,0.14);
+    --max: 1080px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+  }
+  h1,h2,h3,.display{
+    font-family:'Archivo Expanded', sans-serif;
+    font-weight:800;
+    letter-spacing:-0.01em;
+    margin:0;
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important;}
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(251,246,239,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 28px;
+    max-width:var(--max); margin:0 auto;
+  }
+  .brand{
+    display:flex; align-items:center; gap:10px;
+    text-decoration:none;
+    font-family:'Archivo Expanded', sans-serif;
+    font-weight:800;
+    font-size:18px;
+    color:var(--ink);
+  }
+  .brand img{
+    width:34px; height:34px; border-radius:50%;
+    object-fit:cover;
+  }
+  nav.links{display:flex; gap:28px;}
+  nav.links a{
+    text-decoration:none; font-size:15px; font-weight:500;
+    color:var(--ink); opacity:0.75;
+    transition:opacity .15s ease;
+  }
+  nav.links a:hover{opacity:1;}
+  .nav-cta{
+    background:var(--orange); color:#fff;
+    padding:9px 18px; border-radius:100px;
+    font-size:14px; font-weight:600; text-decoration:none;
+    white-space:nowrap;
+  }
+  .nav-cta:hover{background:var(--orange-deep);}
+
+  /* mobile nav simplification */
+  @media (max-width:720px){
+    nav.links{display:none;}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{padding:88px 0 64px;}
+  .hero-grid{
+    display:grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap:56px;
+    align-items:center;
+  }
+  .hero .tagline{
+    font-size:16px; color:var(--brown); font-weight:600;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(40px, 5.4vw, 68px);
+    line-height:0.98;
+    max-width:11ch;
+  }
+  .hero p.lede{
+    margin-top:22px;
+    font-size:18px;
+    max-width:46ch;
+    color:var(--ink);
+    opacity:0.82;
+  }
+  .hero-actions{
+    margin-top:34px;
+    display:flex; gap:14px; flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:13px 24px; border-radius:100px;
+    font-weight:600; font-size:15px; text-decoration:none;
+    border:1.5px solid transparent;
+  }
+  .btn-primary{background:var(--orange); color:#fff;}
+  .btn-primary:hover{background:var(--orange-deep);}
+  .btn-ghost{border-color:var(--line); color:var(--ink);}
+  .btn-ghost:hover{border-color:var(--orange); color:var(--orange);}
+
+  .hero-mark{
+    display:flex; justify-content:center;
+  }
+  .hero-mark img{
+    width:min(100%, 420px);
+    border-radius:50%;
+    box-shadow:0 24px 60px -20px rgba(36,26,18,0.35);
+  }
+
+  @media (max-width:860px){
+    .hero{padding-top:56px;}
+    .hero-grid{grid-template-columns:1fr; text-align:left;}
+    .hero-mark{order:-1; margin-bottom:8px;}
+    .hero-mark img{width:min(72%, 300px);}
+  }
+
+  /* ---------- Section shared ---------- */
+  section{padding:72px 0;}
+  .section-head{
+    max-width:56ch;
+    margin-bottom:40px;
+  }
+  .section-head h2{
+    font-size:clamp(28px,3.4vw,38px);
+  }
+  .section-head p{
+    margin-top:14px; font-size:16px; opacity:0.78; max-width:52ch;
+  }
+
+  /* ---------- About strip ---------- */
+  .about{
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    background:var(--card);
+  }
+  .about .wrap{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:48px;
+    align-items:center;
+  }
+  .about h2{font-size:clamp(26px,3vw,34px); max-width:14ch;}
+  .about p{margin-top:16px; font-size:17px; opacity:0.85; max-width:48ch;}
+  .about-photo{
+    aspect-ratio:4/3;
+    border-radius:18px;
+    background:linear-gradient(135deg, var(--orange), var(--orange-deep));
+    display:flex; align-items:center; justify-content:center;
+    color:#fff; text-align:center; padding:24px;
+    font-family:'Archivo Expanded',sans-serif; font-weight:700; font-size:15px;
+    opacity:0.9;
+  }
+  @media (max-width:860px){
+    .about .wrap{grid-template-columns:1fr;}
+    .about-photo{order:-1;}
+  }
+
+  /* ---------- Order online ---------- */
+  .order-row{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+  }
+  .order-card{
+    border:1.5px solid var(--line);
+    border-radius:16px;
+    padding:26px;
+    display:flex; align-items:center; justify-content:space-between;
+    gap:16px;
+    text-decoration:none;
+    color:var(--ink);
+    transition:border-color .15s ease, transform .15s ease;
+  }
+  .order-card:hover{border-color:var(--orange); transform:translateY(-2px);}
+  .order-card .name{font-family:'Archivo Expanded',sans-serif; font-weight:700; font-size:19px;}
+  .order-card .sub{font-size:14px; opacity:0.65; margin-top:4px;}
+  .order-arrow{
+    width:38px; height:38px; border-radius:50%;
+    border:1.5px solid var(--line);
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+    font-size:16px;
+  }
+  .order-card:hover .order-arrow{border-color:var(--orange); color:var(--orange);}
+  @media (max-width:640px){
+    .order-row{grid-template-columns:1fr;}
+  }
+
+  /* ---------- Locations ---------- */
+  .locations{background:var(--card); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .loc-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:28px;
+  }
+  .loc-card{
+    background:var(--cream);
+    border-radius:20px;
+    overflow:hidden;
+    border:1px solid var(--line);
+  }
+  .loc-map iframe{
+    width:100%; height:220px; border:0; display:block;
+  }
+  .loc-body{padding:24px;}
+  .loc-body h3{font-size:20px;}
+  .loc-body .hours{
+    display:inline-block;
+    margin-top:10px;
+    font-size:14px; font-weight:600;
+    color:var(--orange-deep);
+  }
+  .loc-body address{
+    font-style:normal;
+    margin-top:12px;
+    font-size:15px;
+    opacity:0.8;
+    line-height:1.55;
+  }
+  .loc-body .dir-link{
+    display:inline-flex; align-items:center; gap:6px;
+    margin-top:16px;
+    font-size:14px; font-weight:600;
+    color:var(--orange-deep);
+    text-decoration:none;
+  }
+  .loc-body .dir-link:hover{text-decoration:underline;}
+  @media (max-width:860px){
+    .loc-grid{grid-template-columns:1fr;}
+  }
+
+  /* ---------- Contact / footer ---------- */
+  footer{padding:56px 0 40px;}
+  .footer-top{
+    display:flex; justify-content:space-between; align-items:flex-start;
+    flex-wrap:wrap; gap:32px;
+    padding-bottom:36px;
+    border-bottom:1px solid var(--line);
+  }
+  .footer-brand{display:flex; align-items:center; gap:10px;}
+  .footer-brand img{width:36px; height:36px; border-radius:50%;}
+  .footer-brand span{font-family:'Archivo Expanded',sans-serif; font-weight:800; font-size:18px;}
+  .footer-links{display:flex; gap:32px; flex-wrap:wrap;}
+  .footer-col h4{font-size:13px; font-weight:600; opacity:0.55; margin-bottom:10px;}
+  .footer-col a{display:block; font-size:15px; text-decoration:none; margin-bottom:8px; opacity:0.85;}
+  .footer-col a:hover{color:var(--orange-deep);}
+  .footer-bottom{
+    padding-top:24px;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
+    font-size:13px; opacity:0.55;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="#top" class="brand">
+      <img src="assets/logo.png" alt="House of Kalkki">
+      House of Kalkki
+    </a>
+    <nav class="links">
+      <a href="#about">About</a>
+      <a href="#order">Order</a>
+      <a href="#locations">Locations</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-cta" href="#order">Order online</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="tagline">Sip. Savor. Smile.</div>
+        <h1>A coffee house built for slow mornings and long conversations.</h1>
+        <p class="lede">House of Kalkki serves coffee, comfort food and a place to linger — with two locations across Ahmedabad, open early and open late.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#order">Order online</a>
+          <a class="btn btn-ghost" href="#locations">Find a location</a>
+        </div>
+      </div>
+      <div class="hero-mark">
+        <img src="assets/logo.png" alt="House of Kalkki logo">
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap">
+      <div>
+        <h2>Coffee first. Everything else follows.</h2>
+        <p>What started as one house on Vijay Char Rasta has grown into two spots across the city — each one built around the same idea: good coffee, honest food, and a room worth staying in a little longer than you planned.</p>
+      </div>
+      <div class="about-photo">Photos coming soon</div>
+    </div>
+  </section>
+
+  <section id="order">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Order online</h2>
+        <p>Craving House of Kalkki at home? Order from Navrangpura on Zomato or Swiggy.</p>
+      </div>
+      <div class="order-row">
+        <a class="order-card" href="https://www.zomato.com/ahmedabad/house-of-kalkki-navrangpura" target="_blank" rel="noopener">
+          <div>
+            <div class="name">Zomato</div>
+            <div class="sub">Order delivery or takeaway</div>
+          </div>
+          <div class="order-arrow">↗</div>
+        </a>
+        <a class="order-card" href="https://www.swiggy.com/city/ahmedabad/house-of-kalkki-navrangpura-rest1068387" target="_blank" rel="noopener">
+          <div>
+            <div class="name">Swiggy</div>
+            <div class="sub">Order delivery or takeaway</div>
+          </div>
+          <div class="order-arrow">↗</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="locations" id="locations">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Two houses, one welcome.</h2>
+        <p>Drop by whichever is closer — or make it a reason to visit both.</p>
+      </div>
+      <div class="loc-grid">
+
+        <div class="loc-card">
+          <div class="loc-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.4950967560712!2d72.549329!3d23.042303699999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e85fadd628105%3A0x59785a73da515de1!2sHouse%20of%20Kalkki!5e0!3m2!1sen!2sin!4v1788561984989!5m2!1sen!2sin" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="House of Kalkki Navrangpura map"></iframe>
+          </div>
+          <div class="loc-body">
+            <h3>Navrangpura</h3>
+            <span class="hours">9:30 AM – 1 AM</span>
+            <address>
+              UL-1, HSG House, Vijay Char Rasta, near Supath Complex,<br>
+              Sarvottam Nagar Society, Navrangpura,<br>
+              Ahmedabad, Gujarat 380009
+            </address>
+            <a class="dir-link" href="https://www.google.com/maps/search/?api=1&query=House+of+Kalkki+Navrangpura+Ahmedabad" target="_blank" rel="noopener">Get directions ↗</a>
+          </div>
+        </div>
+
+        <div class="loc-card">
+          <div class="loc-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58756.98499416802!2d72.40970104863281!3d23.012329899999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9b0069f58e3f%3A0x74b2f41aa3fd7971!2sHouse%20of%20Kalkki!5e0!3m2!1sen!2sin!4v1788562015920!5m2!1sen!2sin" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="House of Kalkki Mumatpura map"></iframe>
+          </div>
+          <div class="loc-body">
+            <h3>Mumatpura</h3>
+            <span class="hours">4 PM – 4 AM</span>
+            <address>
+              544/1, off Karnavati Club Road, near Arose Foods,<br>
+              Mumatpura, Ahmedabad, Gujarat 380054
+            </address>
+            <a class="dir-link" href="https://www.google.com/maps/search/?api=1&query=House+of+Kalkki+Mumatpura+Ahmedabad" target="_blank" rel="noopener">Get directions ↗</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="House of Kalkki">
+        <span>House of Kalkki</span>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Follow</h4>
+          <a href="https://www.instagram.com/houseofkalkki/" target="_blank" rel="noopener">Instagram</a>
+        </div>
+        <div class="footer-col">
+          <h4>Order</h4>
+          <a href="https://www.zomato.com/ahmedabad/house-of-kalkki-navrangpura" target="_blank" rel="noopener">Zomato</a>
+          <a href="https://www.swiggy.com/city/ahmedabad/house-of-kalkki-navrangpura-rest1068387" target="_blank" rel="noopener">Swiggy</a>
+        </div>
+        <div class="footer-col">
+          <h4>Navrangpura</h4>
+          <a href="https://www.google.com/maps/search/?api=1&query=House+of+Kalkki+Navrangpura+Ahmedabad" target="_blank" rel="noopener">9:30 AM – 1 AM</a>
+        </div>
+        <div class="footer-col">
+          <h4>Mumatpura</h4>
+          <a href="https://www.google.com/maps/search/?api=1&query=House+of+Kalkki+Mumatpura+Ahmedabad" target="_blank" rel="noopener">4 PM – 4 AM</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 House of Kalkki</span>
+      <span>Ahmedabad, Gujarat</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
